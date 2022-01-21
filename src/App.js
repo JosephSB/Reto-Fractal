@@ -1,7 +1,13 @@
-import "./App.css";
-
+import { DataAudioProvider } from "./Context/AudioContext";
+import MainRouter from "./router/MainRouter";
 function App() {
-  return <div className="App"></div>;
+  return (
+    <DataAudioProvider>
+      <div className="App">
+        <MainRouter />
+      </div>
+    </DataAudioProvider>
+  );
 }
 
 export default App;
