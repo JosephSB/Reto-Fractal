@@ -43,5 +43,10 @@ export const Container = () => {
     padding: 20px;
     padding-left: 350px;
     padding-bottom: 100px;
+    @media only screen and (max-width: 900px) {
+      padding: 5px;
+      padding-bottom: 100px;
+      padding-top: 100px;
+    }
   `;
 };

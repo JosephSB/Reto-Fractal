@@ -13,7 +13,10 @@ export const ContainerReproductor = styled.div`
   bottom: 0;
   z-index: 5;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 4fr 1fr;
+  }
 `;
 
 export const ContainerDataSong = styled.div`
@@ -22,6 +25,10 @@ export const ContainerDataSong = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 1fr 4fr;
+    max-width: 100%;
+  }
 `;
 export const ContainerInfoSong = styled.div`
   padding: 5px;
@@ -39,6 +46,12 @@ export const ContainerPlayStop = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media only screen and (max-width: 600px) {
+    max-width: 100%;
+    & i:not(div) {
+      display: none;
+    }
+  }
 `;
 export const I = styled.i`
   color: ${COLOR_TERTIARY};
@@ -54,11 +67,17 @@ export const ContainerPlay = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  & i:not(div) {
+    display: inline;
+  }
 `;
 export const ContainerVolumen = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
 `;
 
 export const Input = styled.input`

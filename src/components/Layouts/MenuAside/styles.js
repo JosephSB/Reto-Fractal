@@ -7,12 +7,27 @@ import {
 } from "../../../styles/variables";
 
 export const Menu = styled.menu`
-  width: 330px;
+  width: 100%;
+  max-width: 330px;
   height: 100vh;
   background-color: ${COLOR_PRIMARY};
   margin: 0;
   padding: 40px;
   position: fixed;
+  @media only screen and (max-width: 900px) {
+    width: 100%;
+    max-width: 100%;
+    height: 80px;
+    padding: 10px;
+    z-index: 10;
+  }
+`;
+
+export const ContainerNavs = styled.div`
+  @media only screen and (max-width: 900px) {
+    position: absolute;
+    transform: translateX(-150%);
+  }
 `;
 
 export const Nav = styled.nav`
@@ -35,5 +50,20 @@ export const Li = styled.li`
   ${(props) => props.active && Active}
   &:hover {
     color: ${COLOR_4};
+  }
+`;
+export const ContainerMenuResponsive = styled.div`
+  position: relative;
+`;
+
+export const I = styled.i`
+  position: absolute;
+  right: 0;
+  top: 20%;
+  color: ${COLOR_TERTIARY};
+  display: none !important;
+  cursor: pointer;
+  @media only screen and (max-width: 900px) {
+    display: inline !important;
   }
 `;

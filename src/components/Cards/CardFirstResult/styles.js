@@ -8,6 +8,9 @@ export const ContainerCard = styled.div`
   align-items: center;
   margin: 20px 0;
   background-color: ${COLOR_6};
+  @media only screen and (max-width: 500px) {
+    flex-direction: column;
+  }
 `;
 
 export const Figure = styled.figure`
@@ -16,11 +19,19 @@ export const Figure = styled.figure`
   & img {
     width: 100%;
   }
+  @media only screen and (max-width: 500px) {
+    width: 100%;
+    padding: 10px;
+  }
 `;
 
 export const ContainerInfoCard = styled.div`
   width: 70%;
   padding: 20px;
+  @media only screen and (max-width: 500px) {
+    width: 100%;
+    padding: 10px;
+  }
 `;
 
 export const H1 = styled.h1`
