@@ -11,6 +11,13 @@ const dataSongActual = {
   Artist: "",
 };
 
+const OptionsHeader = {
+	        'mode': 'cors',
+	        'headers': {
+            	'Access-Control-Allow-Origin': '*',
+        	}
+    	}
+
 const DataAudioProvider = ({ children }) => {
   const [songs, setSongs] = useState([]);
   const [pointer, setPointer] = useState(0);
@@ -23,7 +30,7 @@ const DataAudioProvider = ({ children }) => {
 
   const searchSongsByAlbum = (AlbumID) => {
     helpHttp()
-      .get(process.env.REACT_APP_API_URL + "album/" + AlbumID)
+      .get(process.env.REACT_APP_API_URL + "album/" + AlbumID,OptionsHeader)
       .then((data) => {
         setSongs(data.tracks.data);
         dataSong.Image = data.cover_medium;
@@ -35,7 +42,7 @@ const DataAudioProvider = ({ children }) => {
   const searchAlbums = async (name) => {
     setLoading(true);
     helpHttp()
-      .get(process.env.REACT_APP_API_URL + "search/album?q=" + name)
+      .get(process.env.REACT_APP_API_URL + "search/album?q=" + name,OptionsHeader)
       .then((data) => {
         setAlbums(data.data);
         setFirstResult(data?.data[0]);
